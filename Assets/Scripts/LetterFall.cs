@@ -15,7 +15,7 @@ public class LetterFall : MonoBehaviour
     void Update()
     {
         Vector2 targetpos = transform.position;
-        targetpos.y = fallSpeed;
-        transform.Translate(targetpos * Time.deltaTime);
+        targetpos.y += fallSpeed * Time.deltaTime;
+        transform.position = (targetpos);
     }
 }
