@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class DistanceCheck : MonoBehaviour
 {
+    public static int playerHealth = 12;
     public GameObject checkBox;
+
+
     private float _distanceBetween;
     private float _trueDistance = 0.5f;
 
-    
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         _distanceBetween = Vector2.Distance(transform.position, checkBox.transform.position);
         //Debug.Log(_distanceBetween);
         ButtonandDistanceCheck();
 
-
     }
 
+    public void healthCheck()
+    {
+        playerHealth--;
+        Debug.Log(playerHealth);
+    }
 
     public void ButtonandDistanceCheck()
     {
@@ -35,21 +41,21 @@ public class DistanceCheck : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.B))
             {
                 Debug.Log("You press B");
-                if (_distanceBetween <= _trueDistance && _distanceBetween >= -_trueDistance)
+                if (_distanceBetween <= _trueDistance && _distanceBetween >= -_trueDistance) //burda mathf.abs kullan
                 {
                     Debug.Log("You Got It!");
                     Destroy(gameObject);
                 }
                 else
                 {
-                    Debug.Log("You are a loser!");
+                    healthCheck();
                 }
             }
         }
 
 
         //Y BUTTON
-        if (CompareTag("YButton"))
+        else if (CompareTag("YButton"))
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
@@ -61,14 +67,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You are a loser!");
+                    healthCheck();
                 }
             }
         }
 
 
         //U BUTTON
-        if (CompareTag("UButton"))
+        else if (CompareTag("UButton"))
         {
             if (Input.GetKeyDown(KeyCode.U))
             {
@@ -80,14 +86,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You are a loser!");
+                    healthCheck();
                 }
             }
         }
 
 
         //I BUTTON
-        if (CompareTag("IButton"))
+        else if (CompareTag("IButton"))
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
@@ -99,14 +105,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You are a loser!");
+                    healthCheck();
                 }
             }
         }
 
 
         //O BUTTON
-        if (CompareTag("OButton"))
+        else if (CompareTag("OButton"))
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
@@ -118,7 +124,7 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You are a loser!");
+                    healthCheck();
                 }
             }
         }
