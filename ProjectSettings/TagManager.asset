@@ -9,6 +9,7 @@ TagManager:
   - IButton
   - OButton
   - BButton
+  - CheckBox
   layers:
   - Default
   - TransparentFX

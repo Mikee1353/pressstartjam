@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float playerHealth = 12.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int playerHealth = 12;
 
-    // Update is called once per frame
-    void Update()
+    public void HealthDecrease()
     {
-        
+        playerHealth--;
+        Debug.Log(playerHealth);
     }
 }

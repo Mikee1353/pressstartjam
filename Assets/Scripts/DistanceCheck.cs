@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DistanceCheck : MonoBehaviour
-{
-    public static int playerHealth = 12;
+public class DistanceCheck : MonoBehaviour 
+{    
     public GameObject checkBox;
-
+    GameManager gameManager;   
 
     private float _distanceBetween;
     private float _trueDistance = 0.5f;
@@ -14,23 +11,19 @@ public class DistanceCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-
+    {       
         _distanceBetween = Vector2.Distance(transform.position, checkBox.transform.position);
         //Debug.Log(_distanceBetween);
         ButtonandDistanceCheck();
 
     }
 
-    public void healthCheck()
-    {
-        playerHealth--;
-        Debug.Log(playerHealth);
-    }
+
 
     public void ButtonandDistanceCheck()
     {
@@ -48,14 +41,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    healthCheck();
+                    gameManager.HealthDecrease();
                 }
             }
         }
 
 
         //Y BUTTON
-        else if (CompareTag("YButton"))
+        if (CompareTag("YButton"))
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
@@ -67,14 +60,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    healthCheck();
+                    gameManager.HealthDecrease();
                 }
             }
         }
 
 
         //U BUTTON
-        else if (CompareTag("UButton"))
+        if (CompareTag("UButton"))
         {
             if (Input.GetKeyDown(KeyCode.U))
             {
@@ -86,14 +79,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    healthCheck();
+                    gameManager.HealthDecrease();
                 }
             }
         }
 
 
         //I BUTTON
-        else if (CompareTag("IButton"))
+        if (CompareTag("IButton"))
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
@@ -105,14 +98,14 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    healthCheck();
+                    gameManager.HealthDecrease();
                 }
             }
         }
 
 
         //O BUTTON
-        else if (CompareTag("OButton"))
+        if (CompareTag("OButton"))
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
@@ -124,7 +117,7 @@ public class DistanceCheck : MonoBehaviour
                 }
                 else
                 {
-                    healthCheck();
+                    gameManager.HealthDecrease();
                 }
             }
         }
