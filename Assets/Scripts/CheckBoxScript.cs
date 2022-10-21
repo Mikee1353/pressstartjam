@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckBoxScript : MonoBehaviour
 {
-    public GameObject Space_button, T_button, Y_button, U_Button, I_button;
+    //public GameObject Space_button, T_button, Y_button, U_Button, I_button;
     GameManager gameManager;
 
     private Vector2 transformpos;
